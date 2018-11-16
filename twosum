@@ -7,4 +7,20 @@ Example:
 Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
 
+排序后的数组查找最快的就是二分法.
+基本思路： 排序，二分查找.
+用目标逐个相减然后查找是否存在（可以顺便返回位置，这样就不用index了）.
+时间复杂度 O(nlogn).
 
+class Solution(object):
+    def twoSum(self, nums, target):
+
+        result = self._twoSum(nums, target)
+        a = nums.index(result[0])
+        # b = nums.index(result[-1], a+1)
+        for i in range(len(nums)-1, -1, -1):
+            if nums[i] == result[1]:
+                return [a, i]
+                # b = i
+                # break
+        # return [a, b]
