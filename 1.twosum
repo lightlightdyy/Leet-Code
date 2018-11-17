@@ -1,3 +1,4 @@
+“”“
 Question：
 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
@@ -11,6 +12,7 @@ Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
 基本思路： 排序，二分查找.
 用目标逐个相减然后查找是否存在（可以顺便返回位置，这样就不用index了）.
 时间复杂度 O(nlogn).
+”“”
 
 class Solution(object):
     def twoSum(self, nums, target):
