@@ -14,7 +14,7 @@ Because nums[0] + nums[1] = 2 + 7 = 9, return [0, 1].
 
 class Solution(object):
     def twoSum(self, nums, target):
-
+#返回组合数对应下标
         result = self._twoSum(nums, target)
         a = nums.index(result[0])
         # b = nums.index(result[-1], a+1)
@@ -24,3 +24,24 @@ class Solution(object):
                 # b = i
                 # break
         # return [a, b]
+        
+# 寻找组合数
+    def _twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+ 
+        sortedNums = sorted(nums)
+        start = 0
+        end = len(sortedNums) - 1
+        while start <= end:
+            # print(nums[start] + nums[end])
+            if sortedNums[start] + sortedNums[end] == target:
+                return sortedNums[start], sortedNums[end]
+            
+            if sortedNums[start] + sortedNums[end] > target:
+                end -= 1
+            else:
+                start += 1
