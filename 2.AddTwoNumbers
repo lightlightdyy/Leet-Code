@@ -1,0 +1,20 @@
+"""
+You are given two non-empty linked lists representing two non-negative integers. 
+The digits are stored in reverse order and each of their nodes contain a single digit.
+Add the two numbers and return it as a linked list.
+You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Example:
+Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+Output: 7 -> 0 -> 8
+Explanation: 342 + 465 = 807.
+给两个非空的链表，每个节点包含一个整数。数字是以倒序排列的，现在输出两个链表相加得出的新链表。
+长度问题：
+1. 同长度不需要考虑。
+2. 不同长度下，正序意味着
+ 3421 + 465 = 3421
+               465
+这种情况最好的方法应该是从后向前，但此题目中给出的就是从后向前，所以也不必考虑这个，
+直接给0即可。
+
+O(n)
+"""
