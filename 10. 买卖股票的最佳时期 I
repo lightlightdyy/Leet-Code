@@ -1,0 +1,57 @@
+“”“
+给定一个数组，它的第 i 个元素是一支给定股票第 i 天的价格。
+如果你最多只允许完成一笔交易（即买入和卖出一支股票），设计一个算法来计算你所能获取的最大利润。
+注意你不能在买入股票前卖出股票。（注意审题：最多只完成一笔交易）
+
+示例 1:
+输入: [7,1,5,3,6,4]  输出: 5
+解释: 在第 2 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 6）的时候卖出，最大利润 = 6-1 = 5 。
+     注意利润不能是 7-1 = 6, 因为卖出价格需要大于买入价格。
+
+示例 2:
+输入: [7,6,4,3,1]  输出: 0
+解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
+
+”“”
+
+官方解释：需要找出给定数组中两个数字之间的最大差值（即，最大利润）。此外，第二个数字（卖出价格）必须大于第一个数字（买入价格）。
+
+class Solution(object):
+    def maxProfit(self, prices):
+        """
+        :type prices: List[int]
+        :rtype: int
+        
+        找到此前中最小的一个与当前相减，最后取最大的一个即可。
+        
+        动态规划，选取最小的卖，最大的买，利润最大。
+        """
+        if not prices:
+            return 0
+        
+        mins = prices[0]
+        maxes = 0
+        
+        for i in range(1, len(prices)):
+            mins = min(prices[i], mins)
+            maxes = max(prices[i]-mins, maxes)
+        
+        return maxes
+        
+
+# 解答2
+
+class Solution:
+    def maxProfit(self, prices):
+        if prices == []: 
+            return 0
+        res = 0
+        small =prices[0]
+        for n in prices[1:]:
+            small = min(n,small)
+            if res < n - small:
+                res = n - small
+        return res
+
+
+
