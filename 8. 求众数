@@ -35,7 +35,7 @@ class Solution(object):
         
         
         
- # 参考答案：排序取中间。。。。。。
+ # 参考答案：排序取中间。。。。。。???中位数
  class Solution(object):
     def majorityElement(self, num):
         return sorted(num)[len(num)/2]
