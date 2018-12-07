@@ -15,6 +15,8 @@ You may assume that the array is non-empty and the majority element always exist
 然后看此时计数器的值，若为零，则将下一个值设为候选众数。以此类推直到遍历完整个数组，当前候选众数即为该数组的众数。
 这个方法的前提是，数组众数一定要存在。
 
+# My comment： 根据上述描述，感觉应该先排序，同时利用了‘出现次数超过一半’的假定，因此本方法不适用于一般众数，不好。
+
 class Solution(object):
     def findMode(self, nums):
         """
@@ -35,7 +37,8 @@ class Solution(object):
         
         
         
- # 参考答案：排序取中间。。。。。。???中位数
+ # 参考答案：排序取中间。。。。。。
+ # 审题： 出现次数大于 ⌊ n/2 ⌋
  class Solution(object):
     def majorityElement(self, num):
         return sorted(num)[len(num)/2]
