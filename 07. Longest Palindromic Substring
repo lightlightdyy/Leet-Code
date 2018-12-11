@@ -1,0 +1,13 @@
+“”“
+Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+
+Example 1:  Input: "babad".  Output: "bab". (Note: "aba" is also a valid answer.)
+
+Example 2: Input: "cbbd". Output: "bb"
+
+
+参考官方解释： https://leetcode-cn.com/problems/longest-palindromic-substring/solution/
+这篇文章是为中级读者而写的。它介绍了回文，动态规划以及字符串处理。请确保你理解什么是回文。
+回文是一个正读和反读都相同的字符串，例如，“aba” 是回文，而 “abc” 不是。
+
+”“”
